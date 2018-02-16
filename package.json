@@ -1,0 +1,17 @@
+{
+  "name": "car-frontend-node",
+  "version": "1.0.0",
+  "description": "A simple frontend for the car API using Node.js/express/EJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Kristian Gavran",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "5.0.0",
+    "ejs": "2.5.7",
+    "express": "4.16.2"
+  }
+}
