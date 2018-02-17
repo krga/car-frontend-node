@@ -1,12 +1,18 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let request = require('request');
+
+let apiUrl = process.env.APIURL || 'http://localhost:3000/api';
 
 router.get("/", (req, res) => {
     res.render('index', { title: 'Car frontend'});
 });
 
 router.get("/listcars", (req, res) => {
-    res.render('listcars', { title: 'Car List:'});
+  request.get(apiUrl, function(err, res2, body) {  
+        let cars = JSON.parse(body);
+        res.render('listcars', { cars: cars, title: 'Car frontend'});
+    });
 });
 
 module.exports = router;
