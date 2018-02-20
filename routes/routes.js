@@ -15,4 +15,22 @@ router.get("/listcars", (req, res) => {
     });
 });
 
+router.get("/newcar", (req, res) => {
+    res.render('newcar');
+});
+
+router.post("/newcar", (req, res) => {
+    var postBody = {
+        url: apiUrl,
+        body: JSON.stringify({name: req.body.carname, hp: req.body.carhp}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    request.post(postBody, function(err, res2, body) {  
+        res.redirect('/');
+    });
+});
+
 module.exports = router;
