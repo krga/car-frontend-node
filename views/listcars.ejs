@@ -18,6 +18,7 @@
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Horsepower</th>
+              <th scope="col">Actions</th>
 
             </tr>
           </thead>
@@ -26,7 +27,9 @@
             <tr>
               <td><%= car.name %> </th>
               <td><%= car.hp %></td>
-
+              <td>
+                  <a class="btn btn-danger" href="/deletecar?id=<%= car.id %>" role="button">Delete</a>
+              </td>
             </tr>
             <% }); %>
           </tbody>

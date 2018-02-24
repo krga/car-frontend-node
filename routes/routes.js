@@ -33,4 +33,10 @@ router.post("/newcar", (req, res) => {
     });
 });
 
+router.get("/deletecar", (req, res) => {
+    request.delete(apiUrl+req.query.id, function(err, res2, body) {  
+        res.redirect('/listcars');
+    });
+});
+
 module.exports = router;
